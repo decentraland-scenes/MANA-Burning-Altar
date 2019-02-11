@@ -1,0 +1,165 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5121,
+            "count" : 60,
+            "max" : [
+                35
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 36,
+            "max" : [
+                0.636661946773529,
+                -1.844359040260315,
+                0.7351539134979248
+            ],
+            "min" : [
+                -0.636661946773529,
+                -2.414350986480713,
+                -0.7351539134979248
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 36,
+            "max" : [
+                1.0,
+                0.9999999403953552,
+                0.866025447845459
+            ],
+            "min" : [
+                -0.9999999403953552,
+                -0.9999999403953552,
+                -0.8660253882408142
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 36,
+            "max" : [
+                0.21064329147338867,
+                0.6456525325775146
+            ],
+            "min" : [
+                0.18874496221542358,
+                0.6266664862632751
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 60,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 432,
+            "byteOffset" : 60,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 432,
+            "byteOffset" : 492,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 288,
+            "byteOffset" : 924,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 1212,
+            "uri" : "Liquid.bin"
+        }
+    ],
+    "materials" : [
+        {
+            "emissiveFactor" : [
+                0.016310233622789383,
+                0.4409983456134796,
+                0.6866748929023743
+            ],
+            "name" : "Emissive",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.1461789906024933,
+                    0.633514940738678,
+                    1.0,
+                    1.0
+                ],
+                "metallicFactor" : 0.0,
+                "roughnessFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder.016",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TEXCOORD_0" : 3
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cylinder.004",
+            "rotation" : [
+                0.0,
+                0.965670645236969,
+                -0.0,
+                0.2597694396972656
+            ],
+            "scale" : [
+                -3.0792555809020996,
+                -0.16315273940563202,
+                -3.0792555809020996
+            ],
+            "translation" : [
+                0.0,
+                0.030399952083826065,
+                -0.0
+            ]
+        }
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ]
+}

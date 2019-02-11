@@ -1,0 +1,163 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5121,
+            "count" : 192,
+            "max" : [
+                101
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 102,
+            "max" : [
+                0.0635700672864914,
+                0.5530608296394348,
+                0.1048629879951477
+            ],
+            "min" : [
+                -0.05297815799713135,
+                -0.48072147369384766,
+                -0.10937602072954178
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 102,
+            "max" : [
+                0.9951334595680237,
+                0.9543663263320923,
+                0.995796263217926
+            ],
+            "min" : [
+                -0.9951335191726685,
+                -0.2810553312301636,
+                -0.9942498207092285
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 102,
+            "max" : [
+                0.5113959908485413,
+                0.24932461977005005
+            ],
+            "min" : [
+                0.500385582447052,
+                0.23584574460983276
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 192,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1224,
+            "byteOffset" : 192,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1224,
+            "byteOffset" : 1416,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 816,
+            "byteOffset" : 2640,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 3456,
+            "uri" : "BotonPrendido.bin"
+        }
+    ],
+    "materials" : [
+        {
+            "emissiveFactor" : [
+                0.03169580549001694,
+                0.1404581367969513,
+                0.2891993224620819
+            ],
+            "name" : "Emissive",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.27042508125305176,
+                    0.8246656656265259,
+                    1.0,
+                    1.0
+                ]
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder.005",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TEXCOORD_0" : 3
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cylinder.011",
+            "rotation" : [
+                0.0,
+                0.0,
+                0.22156541049480438,
+                0.9751455187797546
+            ],
+            "scale" : [
+                1.629271149635315,
+                0.300577312707901,
+                1.6292710304260254
+            ],
+            "translation" : [
+                2.6803481578826904,
+                0.745486319065094,
+                -0.0027121654711663723
+            ]
+        }
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ]
+}

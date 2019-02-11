@@ -12,5 +12,8 @@
   },
   "devDependencies": {
     "decentraland-ecs": "latest"
+  },
+  "dependencies": {
+    "eth-connect": "^4.0.1"
   }
 }

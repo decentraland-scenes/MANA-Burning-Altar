@@ -1,18 +1,16 @@
 {
   "display": {
-    "title": "interactive-text",
+    "title": "MANA Altair",
     "favicon": "favicon_asset"
   },
   "contact": {
-    "name": "author-name",
-    "email": ""
+    "name": "Juan Cazala",
+    "email": "juan@decentraland.org"
   },
   "owner": "",
   "scene": {
-    "parcels": [
-      "0,0"
-    ],
-    "base": "0,0"
+    "parcels": ["23,-23"],
+    "base": "23,-23"
   },
   "communications": {
     "type": "webrtc",

@@ -1,0 +1,196 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5121,
+            "count" : 72,
+            "max" : [
+                71
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 72,
+            "max" : [
+                0.03167140483856201,
+                0.2539544701576233,
+                0.8544715642929077
+            ],
+            "min" : [
+                -0.040664128959178925,
+                -0.6067513823509216,
+                -0.4047280550003052
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 72,
+            "max" : [
+                0.9993160367012024,
+                0.9397696256637573,
+                0.9520542621612549
+            ],
+            "min" : [
+                -1.0,
+                -0.4653284251689911,
+                -0.9080764651298523
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 72,
+            "max" : [
+                0.9516121745109558,
+                0.03501858562231064,
+                0.30582916736602783,
+                1.0
+            ],
+            "min" : [
+                -0.9095255732536316,
+                -0.18810702860355377,
+                -0.9999918937683105,
+                -1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 72,
+            "max" : [
+                0.22256529331207275,
+                0.7043578922748566
+            ],
+            "min" : [
+                0.1839192658662796,
+                0.6333920657634735
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 72,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 864,
+            "byteOffset" : 72,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 864,
+            "byteOffset" : 936,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1152,
+            "byteOffset" : 1800,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 576,
+            "byteOffset" : 2952,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 3528,
+            "uri" : "Stone.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "BaseColor",
+            "uri" : "BaseColor.png"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "BaseColor",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.8545453548431396
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Icosphere_cell.049",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Icosphere_cell.041",
+            "rotation" : [
+                0.0,
+                -0.19550351798534393,
+                -0.0,
+                0.9807031154632568
+            ],
+            "scale" : [
+                1.562237024307251,
+                1.56223726272583,
+                1.562237024307251
+            ],
+            "translation" : [
+                2.0459465980529785,
+                1.6358273029327393,
+                -3.3200199604034424
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ]
+}
