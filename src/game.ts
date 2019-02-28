@@ -131,27 +131,27 @@ executeTask(refresh)
 const off = new GLTFShape('models/BotonApagado.gltf')
 const on = new GLTFShape('models/BotonPrendido.gltf')
 const button = new Entity()
-button.add(new Transform({ position: new Vector3(5, 0, 5) }))
-button.add(off)
-button.add(new OnClick(burn))
+button.addComponent(new Transform({ position: new Vector3(8, 0, 8) }))
+button.addComponent(off)
+button.addComponent(new OnPointerDown(burn))
 engine.addEntity(button)
 
 // base
 let base = new Entity()
-base.add(new GLTFShape('models/Base.gltf'))
-base.add(
+base.addComponent(new GLTFShape('models/Base.gltf'))
+base.addComponent(
   new Transform({
-    position: new Vector3(5, 0, 5)
+    position: new Vector3(8, 0, 8)
   })
 )
 engine.addEntity(base)
 
 // bar
 let bar = new Entity()
-bar.add(new GLTFShape('models/Barra.gltf'))
-bar.add(
+bar.addComponent(new GLTFShape('models/Barra.gltf'))
+bar.addComponent(
   new Transform({
-    position: new Vector3(5, 0, 5),
+    position: new Vector3(8, 0, 8),
     scale: new Vector3(1, 0.47, 1)
   })
 )
@@ -159,22 +159,22 @@ engine.addEntity(bar)
 
 // help
 let helpStone = new Entity()
-helpStone.add(new GLTFShape('models/Help_Stone.gltf'))
-helpStone.add(
+helpStone.addComponent(new GLTFShape('models/Help_Stone.gltf'))
+helpStone.addComponent(
   new Transform({
-    position: new Vector3(5, 0, 5)
+    position: new Vector3(8, 0, 8)
   })
 )
-helpStone.add(new OnClick(() => (helpVisible = 10)))
+helpStone.addComponent(new OnPointerDown(() => (helpVisible = 10)))
 engine.addEntity(helpStone)
 
 const helpText = new Entity()
 const helpShape = new GLTFShape('models/Papel.gltf')
-helpShape.billboard = 7
-helpText.add(helpShape)
-helpText.add(
+helpText.addComponent(new Billboard(true, true, true))
+helpText.addComponent(helpShape)
+helpText.addComponent(
   new Transform({
-    position: new Vector3(7, 2, 2),
+    position: new Vector3(10, 2, 5),
     scale: new Vector3(0.5, 0.5, 0.5)
   })
 )
@@ -182,10 +182,10 @@ engine.addEntity(helpText)
 
 // info
 let infoStone = new Entity()
-infoStone.add(new GLTFShape('models/Stone.gltf'))
-infoStone.add(
+infoStone.addComponent(new GLTFShape('models/Stone.gltf'))
+infoStone.addComponent(
   new Transform({
-    position: new Vector3(5, 0, 5)
+    position: new Vector3(8, 0, 8)
   })
 )
 engine.addEntity(infoStone)
@@ -193,10 +193,10 @@ const infoText = new Entity()
 const infoShape = new TextShape(`Loading...`)
 infoShape.color = new Color3(0.7, 0.7, 0.7)
 infoShape.width = 3
-infoText.add(infoShape)
-infoText.add(
+infoText.addComponent(infoShape)
+infoText.addComponent(
   new Transform({
-    position: new Vector3(6.95, 1.4, 8),
+    position: new Vector3(9.95, 1.4, 11),
     rotation: Quaternion.Euler(0, -64, 0),
     scale: new Vector3(0.9, 0.9, 0.9)
   })
@@ -205,10 +205,10 @@ engine.addEntity(infoText)
 
 // light
 let light = new Entity()
-light.add(new GLTFShape('models/Light.gltf'))
-light.add(
+light.addComponent(new GLTFShape('models/Light.gltf'))
+light.addComponent(
   new Transform({
-    position: new Vector3(5, 0, 5)
+    position: new Vector3(8, 0, 8)
   })
 )
 engine.addEntity(light)
@@ -229,14 +229,14 @@ function update() {
 
 class AnimationSystem {
   update(dt: number) {
-    const transformBar = bar.get(Transform)
+    const transformBar = bar.getComponent(Transform)
     transformBar.scale = new Vector3(
       1,
       transformBar.scale.y + (barScale - transformBar.scale.y) / 10,
       1
     )
 
-    // const transformLight = bar.get(Transform)
+    // const transformLight = bar.getComponent(Transform)
     // log(lightScale, transformLight.scale.y)
     // transformLight.scale = new Vector3(
     //   0,
@@ -254,15 +254,15 @@ class AnimationSystem {
     if (buttonGlow > 0) {
       if (!isButtonGlowing) {
         isButtonGlowing = true
-        button.remove(off)
-        button.add(on)
+        button.removeComponent(off)
+        button.addComponent(on)
       }
       buttonGlow -= dt
     } else {
       if (isButtonGlowing) {
         isButtonGlowing = false
-        button.remove(on)
-        button.add(off)
+        button.removeComponent(on)
+        button.addComponent(off)
       }
     }
   }
@@ -279,14 +279,11 @@ class Particle {
   constructor(public origin: Vector3) {}
 }
 
-var materials = []
-for (let i = 0; i < 11; i++) {
-  const material = new Material()
-  material.albedoColor = Color3.Lerp(initialColor, finalColor, i / 5)
-  material.emissiveColor = Color3.Lerp(initialColor, finalColor, i / 11)
+const material = new Material()
+  material.albedoColor = Color3.Lerp(initialColor, finalColor, 1 / 5)
+  material.emissiveColor = Color3.Lerp(initialColor, finalColor, 1 / 11)
   material.emissiveIntensity = 2
-  materials.push(material)
-}
+
 
 let fireHeight = 0
 
@@ -297,8 +294,8 @@ class ParicleSystem {
       fireHeight = fireHeight + (2 - fireHeight) / 10
       shape.visible = true
       for (const entity of this.group.entities) {
-        const particle = entity.get(Particle)
-        const transform = entity.get(Transform)
+        const particle = entity.getComponent(Particle)
+        const transform = entity.getComponent(Transform)
         const currentMaterial = (particle.life * 10) | 0
         particle.life += dt
         particle.life %= 1
@@ -321,10 +318,7 @@ class ParicleSystem {
           particle.life * 360 + particle.seed * 360
         )
         const nextMaterial = (particle.life * 10) | 0
-        if (nextMaterial !== currentMaterial) {
-          entity.remove(Material)
-          entity.add(materials[nextMaterial])
-        }
+
       }
     } else {
       fireHeight = 0
@@ -334,16 +328,17 @@ class ParicleSystem {
 }
 
 const particles: Entity[] = []
-const origin = new Vector3(5, 1.3, 5)
+const origin = new Vector3(8, 1.3, 8)
 const shape = new PlaneShape()
-shape.billboard = 7
+const billboard = new Billboard()
 
 for (let i = 0; i < 50; i++) {
   const particle = new Entity()
-  particle.add(shape)
-  particle.add(materials[0])
-  particle.add(new Particle(origin))
-  particle.add(
+  particle.addComponent(shape)
+  particle.addComponent(billboard)
+  particle.addComponent(material)
+  particle.addComponent(new Particle(origin))
+  particle.addComponent(
     new Transform({ position: origin, scale: new Vector3(0.05, 0.05, 0.05) })
   )
   engine.addEntity(particle)
