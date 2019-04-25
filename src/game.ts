@@ -131,7 +131,7 @@ executeTask(refresh)
 const off = new GLTFShape('models/BotonApagado.gltf')
 const on = new GLTFShape('models/BotonPrendido.gltf')
 const button = new Entity()
-button.addComponent(new Transform({ position: new Vector3(8, 0, 8) }))
+button.addComponent(new Transform({ position: new Vector3(8, 0, 8), rotation: Quaternion.Euler(0,180,0) }))
 button.addComponent(off)
 button.addComponent(new OnPointerDown(burn))
 engine.addEntity(button)
@@ -141,7 +141,8 @@ let base = new Entity()
 base.addComponent(new GLTFShape('models/Base.gltf'))
 base.addComponent(
   new Transform({
-    position: new Vector3(8, 0, 8)
+    position: new Vector3(8, 0, 8),
+    rotation: Quaternion.Euler(0,180,0)
   })
 )
 engine.addEntity(base)
@@ -152,7 +153,8 @@ bar.addComponent(new GLTFShape('models/Barra.gltf'))
 bar.addComponent(
   new Transform({
     position: new Vector3(8, 0, 8),
-    scale: new Vector3(1, 0.47, 1)
+    scale: new Vector3(1, 0.47, 1),
+    rotation: Quaternion.Euler(0,180,0)
   })
 )
 engine.addEntity(bar)
@@ -186,7 +188,8 @@ let infoStone = new Entity()
 infoStone.addComponent(new GLTFShape('models/Stone.gltf'))
 infoStone.addComponent(
   new Transform({
-    position: new Vector3(8, 0, 8)
+    position: new Vector3(8, 0, 8),
+    rotation: Quaternion.Euler(0,180,0)
   })
 )
 engine.addEntity(infoStone)
@@ -209,7 +212,8 @@ let light = new Entity()
 light.addComponent(new GLTFShape('models/Light.gltf'))
 light.addComponent(
   new Transform({
-    position: new Vector3(8, 0, 8)
+    position: new Vector3(8, 0, 8),
+    rotation: Quaternion.Euler(0,180,0)
   })
 )
 engine.addEntity(light)
