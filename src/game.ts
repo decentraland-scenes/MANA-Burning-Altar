@@ -6,7 +6,7 @@ import ManaBurnerABI from './abis/ManaBurner'
 import ManaTokenABI from './abis/ManaToken'
 
 // If this is on, no transaction is made and the mana is mocked
-let DEMO_MODE = false
+let DEMO_MODE = true
 
 const MANA_TOKEN_ADDRESS = '0x0f5d2fb29fb7d3cfee444a200298f468908cc942'
 const MANA_BURNER_ADDRESS = '0xadfeb1de7876fcabeaf87df5a6c566b70f970018'
@@ -174,8 +174,9 @@ helpText.addComponent(new Billboard(true, true, true))
 helpText.addComponent(helpShape)
 helpText.addComponent(
   new Transform({
-    position: new Vector3(10, 2, 5),
-    scale: new Vector3(0.5, 0.5, 0.5)
+    position: new Vector3(7, 2, 11),
+    scale: new Vector3(0.5, 0.5, 0.5),
+    rotation: Quaternion.Euler(0, 180, 0)
   })
 )
 engine.addEntity(helpText)
