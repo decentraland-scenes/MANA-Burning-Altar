@@ -197,6 +197,7 @@ const infoText = new Entity()
 const infoShape = new TextShape(`Loading...`)
 infoShape.color = new Color3(0.7, 0.7, 0.7)
 infoShape.width = 3
+infoShape.fontSize = 10
 infoText.addComponent(infoShape)
 infoText.addComponent(
   new Transform({
