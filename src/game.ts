@@ -133,7 +133,7 @@ const on = new GLTFShape('models/BotonPrendido.gltf')
 const button = new Entity()
 button.addComponent(new Transform({ position: new Vector3(8, 0, 8), rotation: Quaternion.Euler(0,180,0) }))
 button.addComponent(off)
-button.addComponent(new OnPointerDown(burn))
+button.addComponent(new OnClick(burn))
 engine.addEntity(button)
 
 // base
@@ -167,7 +167,7 @@ helpStone.addComponent(
     position: new Vector3(8, 0, 8)
   })
 )
-helpStone.addComponent(new OnPointerDown(() => (helpVisible = 10)))
+helpStone.addComponent(new OnClick(() => (helpVisible = 10)))
 engine.addEntity(helpStone)
 
 const helpText = new Entity()
@@ -176,9 +176,9 @@ helpText.addComponent(new Billboard(true, true, true))
 helpText.addComponent(helpShape)
 helpText.addComponent(
   new Transform({
-    position: new Vector3(7, 2, 11),
+    position: new Vector3(10, 2, 5),
     scale: new Vector3(0.5, 0.5, 0.5),
-    rotation: Quaternion.Euler(0, 180, 0)
+    rotation: Quaternion.Euler(0, 90, 0)
   })
 )
 engine.addEntity(helpText)
@@ -197,7 +197,7 @@ const infoText = new Entity()
 const infoShape = new TextShape(`Loading...`)
 infoShape.color = new Color3(0.7, 0.7, 0.7)
 infoShape.width = 3
-infoShape.fontSize = 10
+infoShape.fontSize = 3
 infoText.addComponent(infoShape)
 infoText.addComponent(
   new Transform({
