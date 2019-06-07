@@ -9,8 +9,10 @@
   },
   "owner": "",
   "scene": {
-    "parcels": ["-38,-144"],
-    "base": "-38,-144"
+    "parcels": [
+      "0,0"
+    ],
+    "base":"0,0"
   },
   "communications": {
     "type": "webrtc",
