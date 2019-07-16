@@ -9,7 +9,7 @@ and light the flame, which will last 1 block for every 10 MANA burnt.
 
 You **MUST** be on mainnet for this in order to work
 
-[Explore the scene](https://mana-altar-master-iehcppnlvz.now.sh): this link takes you to a copy of the scene deployed to a remote server where you can interact with it just as if you were running `dcl start` locally.
+[Explore the scene](https://mana-altar-nmfgwmfbjo.now.sh): this link takes you to a copy of the scene deployed to a remote server where you can interact with it just as if you were running `dcl start` locally.
 
 **Install the CLI**
 
