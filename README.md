@@ -34,6 +34,16 @@ $:  dcl start
 
 Any dependencies are installed and then the CLI will open the scene in a new browser tab automatically.
 
+Paste the following to the end of the URL in the browser window:
+
+```
+&ENABLE_WEB3
+```
+
+For example, if the URL is `http://127.0.0.1:8000?position=0%2C0&SCENE_DEBUG_PANEL`, make it `http://127.0.0.1:8000?position=0%2C0&SCENE_DEBUG_PANEL&ENABLE_WEB3`
+
+> Note: When running a preview of a scene that uses one of the ethereum libraries, you must have Metamask or Dapper open and you must add this string.
+
 **Usage**
 
 > IMPORTANT: You **MUST** be on mainnet for this in order to work
