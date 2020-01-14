@@ -131,9 +131,21 @@ executeTask(refresh)
 const off = new GLTFShape('models/BotonApagado.gltf')
 const on = new GLTFShape('models/BotonPrendido.gltf')
 const button = new Entity()
-button.addComponent(new Transform({ position: new Vector3(8, 0, 8), rotation: Quaternion.Euler(0,180,0) }))
+button.addComponent(
+  new Transform({
+    position: new Vector3(8, 0, 8),
+    rotation: Quaternion.Euler(0, 180, 0)
+  })
+)
 button.addComponent(off)
-button.addComponent(new OnClick(burn))
+button.addComponent(
+  new OnPointerDown(
+    e => {
+      burn
+    },
+    { button: ActionButton.POINTER, hoverText: 'Burn!' }
+  )
+)
 engine.addEntity(button)
 
 // base
@@ -142,7 +154,7 @@ base.addComponent(new GLTFShape('models/Base.gltf'))
 base.addComponent(
   new Transform({
     position: new Vector3(8, 0, 8),
-    rotation: Quaternion.Euler(0,180,0)
+    rotation: Quaternion.Euler(0, 180, 0)
   })
 )
 engine.addEntity(base)
@@ -154,7 +166,7 @@ bar.addComponent(
   new Transform({
     position: new Vector3(8, 0, 8),
     scale: new Vector3(1, 0.47, 1),
-    rotation: Quaternion.Euler(0,180,0)
+    rotation: Quaternion.Euler(0, 180, 0)
   })
 )
 engine.addEntity(bar)
@@ -167,7 +179,14 @@ helpStone.addComponent(
     position: new Vector3(8, 0, 8)
   })
 )
-helpStone.addComponent(new OnClick(() => (helpVisible = 10)))
+helpStone.addComponent(
+  new OnPointerDown(
+    () => {
+      helpVisible = 10
+    },
+    { button: ActionButton.POINTER, hoverText: 'Read more' }
+  )
+)
 engine.addEntity(helpStone)
 
 const helpText = new Entity()
@@ -189,7 +208,7 @@ infoStone.addComponent(new GLTFShape('models/Stone.gltf'))
 infoStone.addComponent(
   new Transform({
     position: new Vector3(8, 0, 8),
-    rotation: Quaternion.Euler(0,180,0)
+    rotation: Quaternion.Euler(0, 180, 0)
   })
 )
 engine.addEntity(infoStone)
@@ -214,7 +233,7 @@ light.addComponent(new GLTFShape('models/Light.gltf'))
 light.addComponent(
   new Transform({
     position: new Vector3(8, 0, 8),
-    rotation: Quaternion.Euler(0,180,0)
+    rotation: Quaternion.Euler(0, 180, 0)
   })
 )
 engine.addEntity(light)
@@ -286,10 +305,9 @@ class Particle {
 }
 
 const material = new Material()
-  material.albedoColor = Color3.Lerp(initialColor, finalColor, 1 / 5)
-  material.emissiveColor = Color3.Lerp(initialColor, finalColor, 1 / 11)
-  material.emissiveIntensity = 2
-
+material.albedoColor = Color3.Lerp(initialColor, finalColor, 1 / 5)
+material.emissiveColor = Color3.Lerp(initialColor, finalColor, 1 / 11)
+material.emissiveIntensity = 2
 
 let fireHeight = 0
 
@@ -324,7 +342,6 @@ class ParicleSystem {
           particle.life * 360 + particle.seed * 360
         )
         const nextMaterial = (particle.life * 10) | 0
-
       }
     } else {
       fireHeight = 0
