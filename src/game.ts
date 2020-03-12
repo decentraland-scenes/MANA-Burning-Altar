@@ -141,7 +141,7 @@ button.addComponent(off)
 button.addComponent(
   new OnPointerDown(
     e => {
-      burn
+      burn()
     },
     { button: ActionButton.POINTER, hoverText: 'Burn!' }
   )
