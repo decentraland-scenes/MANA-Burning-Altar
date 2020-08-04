@@ -5,11 +5,19 @@ Fees collected from the Marketplace are stored in this Altar.
 Anyone can burn the MANA collected by touching the Altar's stone
 and light the flame, which will last 1 block for every 10 MANA burnt.
 
-![](screenshot/screenshot.png)
+<img src="screenshot/screenshot.png" width="500"> 
 
-You **MUST** be on mainnet for this in order to work
+This scene shows you:
 
-[Explore the scene](https://mana-altar-nmfgwmfbjo.now.sh): this link takes you to a copy of the scene deployed to a remote server where you can interact with it just as if you were running `dcl start` locally.
+- How to call functions from a smart contract
+- How to make a particle effect handling multiple entities
+- How to create custom components to store custom data about entities
+- How to use component groups to handle all entities that share the same components
+- How to create a system to update entity positions frame by frame
+
+
+
+
 
 **Install the CLI**
 
