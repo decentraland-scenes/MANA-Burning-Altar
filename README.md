@@ -1,11 +1,11 @@
-
 ## Mana transaction
-
 
 Fees collected from the Marketplace are stored in this Altar.
 
 Anyone can burn the MANA collected by touching the Altar's stone
 and light the flame, which will last 1 block for every 10 MANA burnt.
+
+![](screenshot/screenshot.png)
 
 You **MUST** be on mainnet for this in order to work
 
@@ -20,7 +20,6 @@ npm i -g decentraland
 ```
 
 For a more details, follow the steps in the [Installation guide](https://docs.decentraland.org/documentation/installation-guide/).
-
 
 **Previewing the scene**
 
@@ -56,12 +55,9 @@ The fire keeps burning for the duration of one Ethereum block mining for every 1
 
 Learn more about how to use blockchain in your scenes in [Blockchain operations](https://docs.decentraland.org/blockchain-interactions/scene-blockchain-operations/) in our docs site.
 
-
-
 ## Demo Mode
 
 You can set the variable `DEMO_MODE` to `true` and the collected MANA will be 25,000 and you won't need to sign a transaction to push the burn button
-
 
 ## Copyright info
 

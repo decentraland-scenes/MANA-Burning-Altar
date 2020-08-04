@@ -6,7 +6,7 @@ import ManaBurnerABI from './abis/ManaBurner'
 import ManaTokenABI from './abis/ManaToken'
 
 // If this is on, no transaction is made and the mana is mocked
-let DEMO_MODE = true
+let DEMO_MODE = false
 
 const MANA_TOKEN_ADDRESS = '0x0f5d2fb29fb7d3cfee444a200298f468908cc942'
 const MANA_BURNER_ADDRESS = '0xadfeb1de7876fcabeaf87df5a6c566b70f970018'
@@ -141,7 +141,7 @@ button.addComponent(off)
 button.addComponent(
   new OnPointerDown(
     e => {
-      burn
+      burn()
     },
     { button: ActionButton.POINTER, hoverText: 'Burn!' }
   )
