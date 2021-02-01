@@ -1,6 +1,6 @@
 import { getProvider } from '@decentraland/web3-provider'
 import { getUserAccount } from '@decentraland/EthereumController'
-import * as eth from '../node_modules/eth-connect/esm'
+import * as eth from 'eth-connect'
 
 import ManaBurnerABI from './abis/ManaBurner'
 import ManaTokenABI from './abis/ManaToken'
@@ -54,10 +54,11 @@ async function refresh() {
   )) as any
   mana = fromWei(await manaTokenInstance.balanceOf(MANA_BURNER_ADDRESS))
 
-  const url = `https://api.etherscan.io/api?module=logs&action=getLogs&fromBlock=${block -
-    LAST_BLOCKS}&toBlock=latest&address=${MANA_TOKEN_ADDRESS}&topic0=${BURN_EVENT_TOPIC0}&apikey=${ETHERSCAN_API_KEY}`
+  const url = `https://api.etherscan.io/api?module=logs&action=getLogs&fromBlock=${
+    block - LAST_BLOCKS
+  }&toBlock=latest&address=${MANA_TOKEN_ADDRESS}&topic0=${BURN_EVENT_TOPIC0}&apikey=${ETHERSCAN_API_KEY}`
   log(url)
-  const events = await fetch(url).then(res => res.json())
+  const events = await fetch(url).then((res) => res.json())
   const result = events.result.pop()
 
   if (!result) return
@@ -97,7 +98,7 @@ async function burn() {
   const account = await getUserAccount()
   if (!DEMO_MODE) {
     await manaBurnerInstance.burn({
-      from: account
+      from: account,
     })
   }
 
@@ -134,13 +135,13 @@ const button = new Entity()
 button.addComponent(
   new Transform({
     position: new Vector3(8, 0, 8),
-    rotation: Quaternion.Euler(0, 180, 0)
+    rotation: Quaternion.Euler(0, 180, 0),
   })
 )
 button.addComponent(off)
 button.addComponent(
   new OnPointerDown(
-    e => {
+    (e) => {
       burn()
     },
     { button: ActionButton.POINTER, hoverText: 'Burn!' }
@@ -154,7 +155,7 @@ base.addComponent(new GLTFShape('models/Base.gltf'))
 base.addComponent(
   new Transform({
     position: new Vector3(8, 0, 8),
-    rotation: Quaternion.Euler(0, 180, 0)
+    rotation: Quaternion.Euler(0, 180, 0),
   })
 )
 engine.addEntity(base)
@@ -166,7 +167,7 @@ bar.addComponent(
   new Transform({
     position: new Vector3(8, 0, 8),
     scale: new Vector3(1, 0.47, 1),
-    rotation: Quaternion.Euler(0, 180, 0)
+    rotation: Quaternion.Euler(0, 180, 0),
   })
 )
 engine.addEntity(bar)
@@ -176,7 +177,7 @@ let helpStone = new Entity()
 helpStone.addComponent(new GLTFShape('models/Help_Stone.gltf'))
 helpStone.addComponent(
   new Transform({
-    position: new Vector3(8, 0, 8)
+    position: new Vector3(8, 0, 8),
   })
 )
 helpStone.addComponent(
@@ -197,7 +198,7 @@ helpText.addComponent(
   new Transform({
     position: new Vector3(10, 2, 5),
     scale: new Vector3(0.5, 0.5, 0.5),
-    rotation: Quaternion.Euler(0, 90, 0)
+    rotation: Quaternion.Euler(0, 90, 0),
   })
 )
 engine.addEntity(helpText)
@@ -208,7 +209,7 @@ infoStone.addComponent(new GLTFShape('models/Stone.gltf'))
 infoStone.addComponent(
   new Transform({
     position: new Vector3(8, 0, 8),
-    rotation: Quaternion.Euler(0, 180, 0)
+    rotation: Quaternion.Euler(0, 180, 0),
   })
 )
 engine.addEntity(infoStone)
@@ -222,7 +223,7 @@ infoText.addComponent(
   new Transform({
     position: new Vector3(9.95, 1.4, 11),
     rotation: Quaternion.Euler(0, -64, 0),
-    scale: new Vector3(0.9, 0.9, 0.9)
+    scale: new Vector3(0.9, 0.9, 0.9),
   })
 )
 engine.addEntity(infoText)
@@ -233,7 +234,7 @@ light.addComponent(new GLTFShape('models/Light.gltf'))
 light.addComponent(
   new Transform({
     position: new Vector3(8, 0, 8),
-    rotation: Quaternion.Euler(0, 180, 0)
+    rotation: Quaternion.Euler(0, 180, 0),
   })
 )
 engine.addEntity(light)
